@@ -1,10 +1,11 @@
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Github, FileVideo, Upload, Wand2 } from "lucide-react"
+import { Github, Wand2 } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { VideoInputForm } from "./components/video-input-form";
 
 export function App() {
   return (
@@ -46,37 +47,7 @@ export function App() {
         </div>
 
         <aside className="w-80 space-y-4">
-          <form className="space-y-4">
-            <label 
-              htmlFor="video" 
-              className="border flex rounded-md aspect-[6/2] cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
-            >
-              
-              <FileVideo className="w-4 h-4" />
-              Selecione um  video
-            </label>
-
-            <input type="file" id="video" accept="video/mp4" className="sr-only"/>
-
-            
-
-            <div className="space-y-1">
-              <Label htmlFor="transcription_prompt">
-                Prompt de transcrição
-              </Label>
-              <Textarea 
-                id="transcription_prompt" 
-                className="leading-relaxed resize-none"
-                placeholder="Incluas palavras-chave mencionadas no vídeo separadas por vírgula"
-              />
-              </div>
-
-              <Button type="submit" className="w-full">
-                Carregar vídeo 
-                <Upload className="w-4 h-4 ml-2"/>
-              </Button> 
-          </form>
-
+          <VideoInputForm />
           <Separator />
 
           <form className="space-y-6">
@@ -92,7 +63,7 @@ export function App() {
                   <SelectItem value="description">Descrição do Youtube</SelectItem>
                 </SelectContent>
               </Select>
-              <Separator />
+        
             </div>
 
             <div className="space-y-1">
