@@ -6,7 +6,7 @@ import { api } from "@/lib/axios";
 interface Prompt {
     id: string,
     title: string,
-    tempalte: string
+    template: string
 }
 
 export function PromptSelect() {
