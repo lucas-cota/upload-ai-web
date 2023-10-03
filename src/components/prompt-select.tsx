@@ -30,7 +30,7 @@ export function PromptSelect(props: PromptSelectProps) {
             return
         }
 
-        props.onPromptSelected(selectedPrompt.tempalte)
+        props.onPromptSelected(selectedPrompt.template)
     }
 
     return (
